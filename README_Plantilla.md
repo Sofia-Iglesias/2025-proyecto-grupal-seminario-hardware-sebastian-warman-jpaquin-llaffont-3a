@@ -1,4 +1,4 @@
-# **`Nombre del Proyecto`**
+Sensor de luz (LDR o fotorresistencia)
 
 `Tecnología de los Sistemas de Información - Seminario Avanzado`  
 `Ciclo Lectivo 2025`
