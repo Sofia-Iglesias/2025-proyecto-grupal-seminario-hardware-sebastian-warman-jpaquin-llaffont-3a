@@ -1,4 +1,4 @@
-Sensor de luz (LDR o fotorresistencia)
+Sensor de Ambiente Inteligente
 
 `Tecnología de los Sistemas de Información - Seminario Avanzado`  
 `Ciclo Lectivo 2025`
@@ -10,47 +10,44 @@ Sensor de luz (LDR o fotorresistencia)
 
 ## **`Objetivo`**
 
-Nuestro objetivo es desarrollar un sistema automatico que detecte los niveles de iluminacion ambiental mediante un sensor de luz (LDR) y encienda una luz LED cuando hay oscuridad. Este proyecto busca simular el funcionamiento de una lampara inteligente que se activa al anochecer.
+Nosotros queremos desarrollar un sistema de iluminación inteligente que detecte los niveles de luz ambiente mediante un sensor LDR y que active automáticamente un LED cuando hay oscuridad. Además, nuestro sistema permite cambiar el modo de funcionamiento con un botón (modo fijo, parpadeo o alarma) y ajustar la intensidad lumínica utilizando un potenciómetro.
 ## **`Descripción del Proyecto`**
-
-El proyecto consiste en un circuito controlado por Arduino UNO que utiliza una fotorresistencia (LDR) para medir la cantidad de luz en el ambiente.
-Cuando el valor de luz baja de un umbral, el Arduino enciende un LED, simulando una luz automática de habitación.
-Además, los valores de luz pueden visualizarse en el Monitor Serial, permitiendo ajustar el umbral de encendido según las condiciones de iluminación del entorno.
+El proyecto consiste en un circuito controlado por un Arduino UNO que utiliza una fotorresistencia (LDR) para medir la iluminación del ambiente. Si el nivel de luz baja de un umbral determinado, el Arduino enciende un LED simulando una lámpara automática.
 
 ## **`Componentes`**
-
 Arduino UNO
-LDR (Sensor de luz)
-Resistencia de 10 kΩ (para divisor de tensión)
-Resistencia de 220 Ω (para el LED)
-LED blanco o amarillo
-
-Cables de conexión y protoboard
-LED blanco o amarillo
-LDR (Sensor de luz)
+LDR (sensor de luz)
+Potenciómetro
+Botón pulsador
+LED 
+Buzzer
+Resistencia de 10 kΩ 
+Resistencia de 220 Ω 
+Protoboard
+Cables de conexión
 ## **`Requisitos`**
 
 Software necesario:
 Arduino IDE
-Tinkercad (para simulación virtual)
+Tinkercad 
 Librerías:
-No requiere librerías adicionales (usa funciones nativas de Arduino).
+No requiere librerías adicionales
 Hardware adicional:
 Ninguno 
 `Completar una vez definido el proyecto.`
 
 ## **`Etapas del proyecto`**
 ### Etapa 1:
-Conectar la LDR en divisor de tensión con resistencia de 10 kΩ.
-Conectar un LED al pin digital 8 con resistencia de 220 Ω.
-Simular el circuito en Tinkercad.
+Conectar la LDR en divisor de tensión con resistencia de 10 kΩ
+Conectar un LED al pin digital 8 con resistencia de 220 Ω
+Simular el circuito 
 
 ### Etapa 2:
-Programar la lectura del sensor con (A0).
-Establecer un umbral de luz (por ejemplo, 500).
-Si el valor es menor al umbral → encender LED; si es mayor → apagar.
-Probar diferentes condiciones de luz y registrar valores.
+Ajustar correctamente el umbral de luz
+Aplicar antirrebote al botón para que no se pulse muchas veces
+Corregir el funcionamiento 
+realizar pruebas
 ## **`Extras`**
 Mostrar los valores del sensor en el Monitor Serial.
-Agregar un potenciómetro para ajustar manualmente la sensibilidad.
-Implementar un relé en el futuro para controlar una lámpara real en lugar de un LED.
+Agregar un LED aparte que se prenda cuando el sistema detecta que está “en modo alarma”.
+Probar cuánto tarda en reaccionar el sistema y ver si conviene agregar un delay() para que no sea tan brusco el cambio.
