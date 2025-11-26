@@ -51,3 +51,5 @@ realizar pruebas
 Mostrar los valores del sensor en el Monitor Serial.
 Agregar un LED aparte que se prenda cuando el sistema detecta que está “en modo alarma”.
 Probar cuánto tarda en reaccionar el sistema y ver si conviene agregar un delay() para que no sea tan brusco el cambio.
+
+LINK A LA SIMULACIÓN: https://www.tinkercad.com/things/hHSVNjlEROq/editel?returnTo=%2Fdashboard%2Fdesigns%2Fall&sharecode=GZPrXzQHJke3S2-b7w0bFh_QjhgkmszOOCWWoRwCke8
