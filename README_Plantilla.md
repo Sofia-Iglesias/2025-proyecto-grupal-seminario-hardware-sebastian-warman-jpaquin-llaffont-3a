@@ -53,3 +53,4 @@ Agregar un LED aparte que se prenda cuando el sistema detecta que está “en mo
 Probar cuánto tarda en reaccionar el sistema y ver si conviene agregar un delay() para que no sea tan brusco el cambio.
 
 LINK A LA SIMULACIÓN: https://www.tinkercad.com/things/hHSVNjlEROq/editel?returnTo=%2Fdashboard%2Fdesigns%2Fall&sharecode=GZPrXzQHJke3S2-b7w0bFh_QjhgkmszOOCWWoRwCke8
+Mi guia de preguntas: https://docs.google.com/document/d/1diOO7IPWnFep_3CYkKRBMyk7EszeeEGi2sczevT4jCc/edit?usp=sharing
