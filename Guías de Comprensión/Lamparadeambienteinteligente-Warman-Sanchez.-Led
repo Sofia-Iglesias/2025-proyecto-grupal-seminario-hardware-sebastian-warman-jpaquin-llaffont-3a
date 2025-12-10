@@ -1,0 +1,42 @@
+Nombre del componente:
+ LED 
+1
+ Es un actuador y  su función principal es emitir luz cuando recibe corriente eléctrica.
+2. 
+ Puede utilizar señal digital (encendido y apagado) o señal PWM (modulación para regular brillo).
+3. 
+ Si se usa señal digital: HIGH (5V) o LOW (0V).
+ Si se usa señal PWM: valores entre 0 y 255.
+4. tiene 2 patas: 
+Patas del L 
+Ánodo (pata larga) Entrada de corriente (positivo)
+Cátodo (pata corta) Conexión a tierra (negativo)
+
+5.
+ Se usa el pin digital 9 porque permite salida PWM, lo que permite controlar la intensidad del LED.
+6. Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
+Pin 9 ─── Resistencia 220 Ω ─── Ánodo LED
+Cátodo LED ─── GND
+Se conecta una resistencia de 220 Ω entre el pin 9 y el ánodo del LED para limitar la corriente. El cátodo se conecta directamente a GND.
+7.
+ El LED emite luz cuando circula corriente desde el ánodo hacia el cátodo. La resistencia evita una sobrecorriente.
+8.
+ No requiere librerías. Se controla con funciones nativas como digitalWrite() o analogWrite().
+9.
+ Se interpreta como salida. Un valor HIGH enciende el LED y un valor LOW lo apaga. Con analogWrite() se regula el brillo asignando un valor de 0 a 255.
+10.
+ Debe usarse siempre una resistencia para evitar que el LED reciba demasiada corriente. No se debe conectar directamente entre 5V y GND sin protección.
+11
+Si el LED enciende, está funcionando.
+12
+https://www.tinkercad.com/things/0SIiZnFsY6X/editel?returnTo=%2Fdashboard%2Fdesigns%2Fall
+13.
+ No entrega lecturas. Si el componente funciona, el LED debe encenderse o variar su brillo si se usa PWM.
+14.
+
+Posible fallo                           Detección
+LED conectado al reves                  No ilumina
+Sin resistencia                   Sobrecalentamiento o daño
+Pin incorrecto                      No responde
+PWM no utilizado correctamente     No varía el brillo
+
