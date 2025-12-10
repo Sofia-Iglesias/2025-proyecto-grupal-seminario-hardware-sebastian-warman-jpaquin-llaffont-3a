@@ -1,0 +1,34 @@
+BOTÓN 
+1
+ es un sensor digital. su función es activar una acción en el sistema cuando se presiona. en este proyecto se utiliza para cambiar de modo.
+2
+usa señal digital.
+3 
+ entrega valores high (1) cuando está liberado y low (0) cuando se presiona.
+4 
+ tiene dos terminales: uno se conecta al pin digital de arduino y el otro a gnd.
+5 
+ se utiliza el pin 2 configurado como input_pullup para evitar el uso de una resistencia externa.
+6 
+pin 2 ─── botón ─── gnd
+el botón debe colocarse cruzado en la protoboard (debe estar atravesando la línea central).
+uno de los lados del botón va directamente al pin digital 2.
+el otro lado del botón va a gnd.
+cuando el botón está suelto el pin lee 1 (por input_pullup).
+cuando se presiona, el circuito se cierra y el pin queda conectado a gnd, por lo que arduino lee 0.
+7
+ cuando se presiona cierra el circuito y el pin pasa de high a low, permitiendo detectar la acción.
+8 
+ no, no usa.
+9 
+ se utiliza digitalread() y se cambia el modo cuando detecta el cambio de estado.
+10
+ debe estar correctamente cruzado en la protoboard. es necesario aplicar antirrebote en el código.
+11
+ probando si el modo cambia al presionarlo o si la lectura pasa de 1 a 0 en el monitor serial.
+12 https://www.tinkercad.com/things/aTqXypaor1P/editel?returnTo=%2Fdashboard%2Fdesigns%2Fall&sharecode=9H7hvQDXADm1Nk49XD4-IdHIKFu4-3xCns4W23QAd9Y
+13 
+ 1 cuando no está presionado, 0 cuando se presiona.
+14 
+ si no cruza la línea central o no está conectado a gnd, el estado no cambia.
+

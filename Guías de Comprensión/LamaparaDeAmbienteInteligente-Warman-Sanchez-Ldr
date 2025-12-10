@@ -1,0 +1,87 @@
+1 LDR (Light Dependent Resistor)
+
+2.
+el LDR es un sensor analógico de luz, Su función principal es detectar la cantidad de iluminación presente en el ambiente. A mayor luz, la resistencia disminuye y Arduino interpreta que hay claridad. Cuando hay oscuridad, la resistencia aumenta y Arduino registra un nivel bajo de luz. Esto permite activar el LED automáticamente al detectar falta de iluminación.
+
+3. 
+Utiliza señal analógica, ya que entrega valores variables que representan distintos niveles de luz ambiental.
+4. 
+Entrega valores entre 0 y 1023, donde:
+Valor cercano a 0 → muy poca luz (oscuridad),
+
+Valor cercano a 1023 = mucha luz.
+
+5. ¿Qué pines de conexión tiene el componente? Enumerar y describir su función.
+La LDR tiene dos pines:
+Pin
+Conexión
+Función
+Pin 1
++5V
+Alimentación eléctrica
+Pin 2
+A0 + resistencia de 10kΩ
+Lectura de variación de luz
+
+
+6. Se utiliza el pin A0, ya que es un pin de entrada analógica. Es necesario porque la LDR entrega valores variables. También se usa el pin 5V para alimentarlo y GND para la resistencia.
+
+7. Se utiliza un divisor de tensión para obtener un valor analógico correcto.
+5V ─── LDR ───●─── A0
+              │
+              └─── Resistencia 10kΩ ─── GND
+
+Una pata de la LDR se conecta a 5V.
+La otra pata va al pin A0.
+Desde ese mismo punto se coloca una resistencia de 10kΩ hacia GND.
+ Esto permite que el Arduino reciba un voltaje representativo del nivel de luz ambiental
+
+8. 
+el LDR varía su resistencia según la luz: cuando hay mucha luz, su resistencia baja y el voltaje que recibe Arduino aumenta; cuando hay oscuridad, la resistencia sube y el voltaje disminuye. Arduino interpreta esa variación mediante el pin analógico.
+
+9. 
+No. Se programa utilizando las funciones nativas del Arduino (analogRead()).
+
+10. Se lee mediante la función:
+int luz = analogRead(A0);
+
+Luego se toma una decisión. Por ejemplo:
+if(luz < 400){
+  // Encender LED
+}
+
+11. Es fundamental conectar la resistencia de 10kΩ en serie con la LDR para evitar lecturas incorrectas.
+No debe conectarse directamente a GND sin pasar por la resistencia.
+Los cables deben estar correctamente cruzados para evitar valores constantes
+
+12. https://www.tinkercad.com/things/0SIiZnFsY6X/editel?returnTo=%2Fdashboard%2Fdesigns%2Fall&sharecode=7Ed2OfKBtj-OHqUOQYXdDrmnmcdNnfzONfV4TshZos4
+
+13
+Situación   simulada Valor esperado aproximado
+Oscuridad   0 – 150
+Luz ambiente   400 – 700
+Luz intensa (linterna, foco)  800 – 1023
+
+14
+
+Posible falla   Cómo detectarla
+Resistencia mal conectada  Lectura constante en 0 o 1023
+Cable suelto    Cambios aleatorios
+Sensor desconectado  Sin variación al taparlo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

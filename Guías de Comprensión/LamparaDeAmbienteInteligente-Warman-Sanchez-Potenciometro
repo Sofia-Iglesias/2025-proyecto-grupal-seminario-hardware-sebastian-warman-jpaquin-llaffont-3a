@@ -1,0 +1,35 @@
+guía de comprensión – Potenciometro
+
+nombre del componente:
+ potenciómetro
+1
+ es un sensor analógico. su función principal es generar una variación de tensión dependiendo de la posición de la perilla. en este proyecto se usa para ajustar el brillo del led.
+2
+ usa señal analógica.
+3
+ entrega valores entre 0 y 1023 dependiendo de su posición.
+4
+ tiene tres pines: uno se conecta a 5v (alimentación), otro a gnd (tierra eléctrica) y el pin central entrega la señal variable hacia arduino.
+5
+ se conecta al pin a1 porque permite lectura analógica.
+6
+5v ───┐
+      ├─ potenciómetro ─── a1
+gnd ──┘
+
+no requiere resistencia adicional.
+7
+ modifica su resistencia interna al girarlo, lo que cambia el voltaje enviado a arduino. cuanto más se acerca al lado de 5v, mayor será el valor leído; al girarlo hacia gnd, el valor disminuye.
+8
+ no, se usa analogread().
+9
+ se lee con analogread(a1) y luego se mapea a un valor pwm entre 0 y 255 para regular la intensidad del led.
+10
+ verificar que esté correctamente conectado para evitar lecturas invertidas o sin variación. no exceder 5v de alimentación.
+11
+ probando que el valor leído cambia al girarlo y observando si modifica el brillo del led en la simulación.
+12 https://www.tinkercad.com/things/hcGiSAMoHdr/editel?returnTo=%2Fdashboard%2Fdesigns%2Fall&sharecode=zRVkLF3gyAKhXP2wrw3bLN8LNpVfDhVzx0KrWHhyE14
+13
+ valores entre 0 y 1023 según la posición.
+14
+ si está mal conectado puede entregar un valor fijo o invertido. también puede fallar si el pin central no está conectado al pin analógico.
