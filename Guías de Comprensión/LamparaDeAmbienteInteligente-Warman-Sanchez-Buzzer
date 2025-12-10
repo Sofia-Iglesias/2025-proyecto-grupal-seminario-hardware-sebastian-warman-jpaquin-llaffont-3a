@@ -1,0 +1,56 @@
+nombre del componente:
+buzzer
+
+1
+es un actuador sonoro. su función principal es emitir un sonido cuando recibe una señal eléctrica. en este proyecto se utiliza únicamente en el modo de alarma para avisar que se alcanzó una condición específica.
+2
+utiliza señal digital. arduino controla el sonido mediante la función tone(), que permite enviar una frecuencia determinada.
+3
+el buzzer no entrega lecturas, solo recibe una frecuencia. en general se utilizan frecuencias entre 200 y 4000 hz. para la simulación se usa comúnmente 1000 hz porque es claramente audible.
+
+4
+el buzzer tiene dos patas:
+la pata positiva se conecta a un pin digital de arduino
+la pata negativa se conecta a gnd
+la pata positiva recibe la señal eléctrica que genera el sonido, y la pata negativa completa el circuito.
+
+5
+se utiliza el pin digital 8. este pin permite generar una señal digital modulada con tone(), lo cual es necesario para controlar la frecuencia del sonido.
+
+6
+pin 8 ─── buzzer ─── gnd
+la pata positiva del buzzer se conecta directamente al pin 8. a través de ese pin arduino envía la señal que hace vibrar el buzzer.
+la pata negativa se conecta a gnd para cerrar el circuito.
+no requiere resistencias adicionales porque el buzzer ya regula la corriente interna y arduino maneja la señal digital.
+
+7
+el buzzer contiene un pequeño disco piezoeléctrico que vibra cuando recibe una señal electrónica. la función tone() genera una frecuencia que hace vibrar ese disco, produciendo un sonido. cuando se usa notone() se detiene la vibración.
+8
+no. funciona únicamente con las funciones tone() y notone() incorporadas en arduino.
+
+9
+como actuador, solo recibe órdenes. para activarlo se usa:
+tone(8, 1000);
+y para apagarlo:
+noTone(8);
+el componente no envía información de vuelta al arduino.
+
+10
+no debe mantenerse activo durante largos periodos a frecuencias muy altas, ya que puede dañarse.
+también es importante conectar correctamente la polaridad: positivo al pin digital y negativo a gnd.
+si se conecta al revés puede no sonar o generar un sonido muy débil.
+
+11
+probando que el buzzer emita sonido cuando se activa en la simulación.
+si se usa un código simple con tone() y notone(), el buzzer debe sonar de forma intermitente.
+también se puede verificar que el led asociado en la prueba prenda y apague al ritmo del buzzer.
+
+12  https://www.tinkercad.com/things/jGgLk13ERLK/editel?returnTo=%2Fdashboard%2Fdesigns%2Fall&sharecode=aIvw4P7ec_olRGaVMRYtKEOUH9iMeLsiEiAj785mBso
+
+13
+no se reciben valores, pero se espera que el buzzer emita un sonido claro y constante con la frecuencia establecida. si la simulación está configurada en modo alarma, debe sonar de manera intermitente.
+
+14 
+si está mal conectado puede que no suene o que suene de forma continua sin control.
+si la pata positiva va a gnd o la negativa a un pin digital, el circuito no funcionará.
+también puede fallar si el código no activa correctamente la función tone() por un error lógico en las condiciones del programa.
